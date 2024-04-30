@@ -1,0 +1,129 @@
+@use './../../scss/' as *;
+
+.block-text {    
+    position: relative;
+    .title {
+        color: $secondary-color;
+        -webkit-text-stroke: 1px $secondary-color;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    .sub-title {
+        position: relative;
+        line-height: 3.2;
+        color: $secondary-color;        
+        font-size: 25px;        
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 5px;
+            background: $rojo;
+        }
+        @include mobile{
+            margin-top: -50px;
+            font-size: 25px;
+            line-height: 1.5;
+            padding-bottom: 20px;
+        }
+    }
+
+    .desc {
+        font-size: 24px;
+        color: $secondary-color;
+    
+    }
+    .desc1 {        
+        color: $secondary-color;
+        margin-top: -40px;    
+    }
+    .desc2 {        
+        color: $secondary-color;    
+    }
+    
+    &.center {
+        .sub-title::after {
+            left: 0;
+            right: 0;
+            
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    h1.heading-bg {
+        font-size: 240px;
+        letter-spacing: 24px;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: -1;
+        left: -120px;     
+        top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        @include mobile {
+            font-size: 20px;
+            top: 60px;
+            left: 40px
+        }
+
+        span {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $rosa;
+            -webkit-text-fill-color: rgb(0 0 0/0%);
+        }
+    } 
+
+    ul {
+        padding-left: 3px;
+        color: $secondary-color;
+
+        li {
+            @include flex(flex-start, flex-start);
+
+            i {
+                margin-right: 29px;
+                font-weight: 300;
+                color: $main-color;
+                margin-top: 4px;
+                font-size: 25px;
+                color: $rojo;
+            }
+        }
+
+        &.nft {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 50%;
+                margin-bottom: 18px;
+
+                @include mobile {
+                    width: 100%;
+                }
+                a {
+                    font-size: 18px;
+                    font-family: $font-second;
+
+                    i {
+                        margin-right: 17px;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+                
+            }
+            &.s2 {
+                display: block;
+            }
+        }
+    }
+
+}
